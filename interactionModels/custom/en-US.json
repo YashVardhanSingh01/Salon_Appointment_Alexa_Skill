@@ -1,0 +1,460 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "spa session booking",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "WelcomeAndDataIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "i am {name}",
+                "{name}",
+                "my name is {name}"
+              ]
+            },
+            {
+              "name": "mobileNumber",
+              "type": "AMAZON.PhoneNumber",
+              "samples": [
+                "my phone number is {mobileNumber}",
+                "my mobile number is {mobileNumber}",
+                "{mobileNumber}",
+                "my number is {mobileNumber}"
+              ]
+            }
+          ],
+          "samples": [
+            "my name is {name} and my mobile number is {mobileNumber}",
+            "{name} {mobileNumber}",
+            "my number is {mobileNumber}",
+            "my number is {mobileNumber} and my name is {name}",
+            "my phone number is {mobileNumber}",
+            "i am {name}",
+            "my name is {name} and my number is {mobileNumber}",
+            "my mobile number is {mobileNumber}",
+            "my name is {name} "
+          ]
+        },
+        {
+          "name": "LoggedInIntent",
+          "slots": [
+            {
+              "name": "service",
+              "type": "SERVICES",
+              "samples": [
+                "i want to get a {service}",
+                "{service}",
+                "I would like to have a {service}"
+              ],
+              "multipleValues": {
+                "enabled": false
+              }
+            }
+          ],
+          "samples": [
+            "can i get a {service} too",
+            "book me a {service}",
+            "can i have a {service}",
+            "i want to get a {service}",
+            "{service}",
+            "i would like to get a {service}"
+          ]
+        },
+        {
+          "name": "ConfirmBookingIntent",
+          "slots": [],
+          "samples": [
+            "yes book it",
+            "no i am done",
+            "yes thank you",
+            "yes",
+            "yes go ahead",
+            "yes schedule a session",
+            "yes please book it"
+          ]
+        },
+        {
+          "name": "HaircutIntent",
+          "slots": [
+            {
+              "name": "haircutStyle",
+              "type": "HAIRCUTS"
+            }
+          ],
+          "samples": [
+            "book me a {haircutStyle} cut",
+            "i feel like getting a {haircutStyle} today",
+            "{haircutStyle}",
+            "i would like to get a {haircutStyle}"
+          ]
+        },
+        {
+          "name": "ManicureIntent",
+          "slots": [
+            {
+              "name": "manicureType",
+              "type": "MANICURES"
+            }
+          ],
+          "samples": [
+            "book me a {manicureType}",
+            "i want a {manicureType}",
+            "i feel like getting a {manicureType} today",
+            "{manicureType}",
+            "i would like to get a {manicureType}"
+          ]
+        },
+        {
+          "name": "PedicureIntent",
+          "slots": [
+            {
+              "name": "pedicureType",
+              "type": "PEDICURES"
+            }
+          ],
+          "samples": [
+            "book me a {pedicureType}",
+            "i feel like having a {pedicureType}",
+            "{pedicureType}",
+            "i would like to get a {pedicureType}"
+          ]
+        },
+        {
+          "name": "SpaIntent",
+          "slots": [
+            {
+              "name": "spaType",
+              "type": "SPA"
+            }
+          ],
+          "samples": [
+            "book me a {spaType}",
+            "i feel like having a {spaType} today",
+            "{spaType}",
+            "i would like to have a {spaType}"
+          ]
+        },
+        {
+          "name": "GetDateandTimeIntent",
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "on {date}",
+                "{date}"
+              ]
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "samples": [
+                "at {time} on {date}",
+                "at {time}",
+                "{time}"
+              ]
+            }
+          ],
+          "samples": [
+            "book it on {date}",
+            "{time} works for me",
+            "i am free at {time}",
+            "book a session on {date}",
+            "i want an appointment on {date} at {time} "
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "4",
+              "name": {
+                "value": "Manicure"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "Pedicure"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "Haircut"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "Massage"
+              }
+            }
+          ],
+          "name": "SERVICES"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Paraffin Manicure"
+              }
+            },
+            {
+              "name": {
+                "value": "Spa Manicure"
+              }
+            },
+            {
+              "name": {
+                "value": "French Manicure"
+              }
+            },
+            {
+              "name": {
+                "value": "Regular Manicure"
+              }
+            }
+          ],
+          "name": "MANICURES"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Spa Pedicure"
+              }
+            },
+            {
+              "name": {
+                "value": "Fish Pedicure"
+              }
+            },
+            {
+              "name": {
+                "value": "French Pedicure"
+              }
+            },
+            {
+              "name": {
+                "value": "Regular Pedicure"
+              }
+            }
+          ],
+          "name": "PEDICURES"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Braids"
+              }
+            },
+            {
+              "name": {
+                "value": "Mohawk"
+              }
+            },
+            {
+              "name": {
+                "value": "Layered Cut"
+              }
+            },
+            {
+              "name": {
+                "value": "Bangs"
+              }
+            },
+            {
+              "name": {
+                "value": "Bob Cut"
+              }
+            }
+          ],
+          "name": "HAIRCUTS"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Swedish Massage"
+              }
+            },
+            {
+              "name": {
+                "value": "Hot Stone Therapy"
+              }
+            },
+            {
+              "name": {
+                "value": "Shiatsu Session"
+              }
+            },
+            {
+              "name": {
+                "value": "Deep Tissue Massage"
+              }
+            },
+            {
+              "name": {
+                "value": "Aromatherapy Massage"
+              }
+            }
+          ],
+          "name": "SPA"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "WelcomeAndDataIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.187711236669.342226365528"
+              }
+            },
+            {
+              "name": "mobileNumber",
+              "type": "AMAZON.PhoneNumber",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.187711236669.1321891547535"
+              }
+            }
+          ]
+        },
+        {
+          "name": "LoggedInIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "service",
+              "type": "SERVICES",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1009451134307.454747662248"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetDateandTimeIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1602782708310.1654631194420"
+              }
+            },
+            {
+              "name": "time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1602782708310.534715554502"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.187711236669.342226365528",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Could we have your name?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.187711236669.1321891547535",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Could we have your mobile number?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Ok your name is {name} , what is your moblie number?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1009451134307.454747662248",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please select a service."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1602782708310.534715554502",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "We will schedule it on {date} . Please tell us a time convenient for you."
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me a {time} ."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1602782708310.1654631194420",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please tell me a date."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "23"
+}
